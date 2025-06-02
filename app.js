@@ -83,12 +83,30 @@ sortearBtn.addEventListener("click", () => {
     result.innerText = "Nenhum nome para sortear.";
     return;
   }
-  result.innerText = `Nome sorteado: \n
-  ${users[idx].nome}\n 
-  ${users[idx1].nome}\n
-  ${users[idx2].nome}\n
-  ${users[idx3].nome}\n
-  `;
+  const sorteadosAntigos = JSON.parse(localStorage.getItem("sorteados") || "[]");
+
+  if (sorteadosAntigos.length >= users.length) {
+    result.innerText = "Todos os nomes já foram sorteados!";
+    return;
+  }
+  const nomesDisponiveis = users.filter(u => !sorteadosAntigos.includes(u.id));
+
+  const sorteados = [];
+
+  while (sorteados.length < 4 && nomesDisponiveis.length > 0) {
+    const idx = Math.floor(Math.random() * nomesDisponiveis.length);
+    const selecionado = nomesDisponiveis.splice(idx, 1)[0];
+
+    sorteados.push(selecionado);
+    sorteadosAntigos.push(selecionado.id);
+  }
+  localStorage.setItem("sorteados", JSON.stringify(sorteadosAntigos));
+
+  if (sorteados.length === 0) {
+    result.innerText = "Nenhum nome sorteado.";
+  } else {
+    result.innerText = "Nomes sorteados:\n" + sorteados.map(s => s.nome).join("\n");
+  }
 });
 
 lerDados();
