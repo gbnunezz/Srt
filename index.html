@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Nomes</title>
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <form id="formNomes">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite o nome:" required />
+    <button type="submit" id="botao">Criar</button>
+  </form>
+
+  <ul id="areaNomes"></ul>
+  <p id="result"></p>
+
+  <button id="sortear">sortear</button>
+  <p id="result"></p>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

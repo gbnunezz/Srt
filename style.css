@@ -1,0 +1,102 @@
+/* 1. Variáveis para tema escuro */
+:root {
+    color-scheme: dark; /* ativa cores nativas em modo escuro nos form controls :contentReference[oaicite:0]{index=0} */
+    --bg: #1e1e1e;              /* fundo geral da página :contentReference[oaicite:1]{index=1} */
+    --card-bg: #2a2a2a;         /* fundo do formulário e cartões */
+    --text: #e0e0e0;            /* cor do texto principal */
+    --input-bg: #333333;        /* fundo dos campos de input */
+    --input-text: #ffffff;      /* texto dentro dos inputs */
+    --button-bg: #444444;       /* fundo dos botões */
+    --button-hover: #555555;    /* fundo ao passar o mouse */
+    --button-text: #ffffff;     /* texto dos botões */
+    --border-radius: 0.5rem;    /* bordas arredondadas */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* sombra de caixas :contentReference[oaicite:2]{index=2} */
+  }
+  
+  /* 2. Estilo global */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background-color: var(--bg);    /* fundo escuro :contentReference[oaicite:3]{index=3} */
+    color: var(--text);
+    font-family: sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  /* 3. Formulário */
+  #formNomes {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 1.5rem;
+  }
+  #formNomes label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  #formNomes input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    border: none;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+  }
+  #formNomes button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  #formNomes button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  /* 4. Lista de nomes e resultado */
+  #areaNomes {
+    list-style: none;
+    width: 100%;
+    max-width: 360px;
+    margin-bottom: 1rem;
+  }
+  #areaNomes li {
+    background-color: var(--card-bg);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+  }
+  #result {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  /* 5. Botão de sortear separado */
+  #sortear {
+    padding: 0.6rem 1.2rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  #sortear:hover {
+    background-color: var(--button-hover);
+  }
+  
